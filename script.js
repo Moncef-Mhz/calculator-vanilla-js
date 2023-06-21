@@ -4,18 +4,22 @@ class Calculator {
     this.currentOperandTextElement = currentOperandTextElement;
     this.clear();
   }
+
   clear() {
     this.currOperand = "";
     this.prevOperand = "";
     this.operation = undefined;
   }
+
   delete() {
-    this.currOperand = this.chooseOperation.toString().slice(0 - 1);
+    this.currOperand = this.currOperand.toString().slice(0, -1);
   }
+
   appendNumber(number) {
     if (number === "." && this.currOperand.includes(".")) return;
     this.currOperand = this.currOperand.toString() + number.toString();
   }
+
   chooseOperation(operation) {
     if (this.currOperand === "") return;
     if (this.prevOperand !== "") {
@@ -25,6 +29,7 @@ class Calculator {
     this.prevOperand = this.currOperand;
     this.currOperand = "";
   }
+
   compute() {
     let computetion;
     const prev = parseFloat(this.prevOperand);
@@ -50,9 +55,22 @@ class Calculator {
     this.operation = undefined;
     this.prevOperand = "";
   }
+  getDisplayNumber(number) {
+    const floatNumber = parseFloat(number);
+    if (isNaN(floatNumber)) return "";
+
+    return floatNumber.toLocaleString("en");
+  }
   updateDisplay() {
-    this.currentOperandTextElement.innerText = this.currOperand;
-    this.previousOperandTextElement.innerText = this.prevOperand;
+    this.currentOperandTextElement.innerText = this.getDisplayNumber(
+      this.currOperand
+    );
+
+    if (this.operation != null) {
+      this.previousOperandTextElement.innerText = `${this.getDisplayNumber(
+        this.prevOperand
+      )} ${this.operation}`;
+    }
   }
 }
 
