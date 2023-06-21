@@ -5,32 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <div class="calculator-grid">
         <div class="output">
-            <div class="prev-outpout">12 + 15</div>
-            <div class="current-output">27</div>
+            <div class="prev-output" data-prev-operand></div>
+            <div class="current-output" data-curr-operand></div>
         </div>
-        <div class="span-2">AC</div>
-        <div>DEL</div>
-        <div>/</div>
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>*</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>+</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div>-</div>
-        <div>.</div>
-        <div>0</div>
-        <div class="span-2">=</div>
+        <button class="span-2" data-clear>AC</button>
+        <button data-delete>DEL</button>
+        <button data-operation>÷</button>
+        <button data-number>1</button>
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button data-operation>*</button>
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button data-operation>+</button>
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button data-operation>-</button>
+        <button data-number>.</button>
+        <button data-number>0</button>
+        <button class="span-2" data-equal>=</button>
     </div>
+    <script src="script.js"></script>
+
 </body>
 </html>

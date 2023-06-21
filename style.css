@@ -2,5 +2,60 @@
 *::after,
 *::before {
     box-sizing: border-box;
-    font: poppins;
+    font-weight: normal;
+    font-family: poppins, sans-serif;
+
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #605dff, #54fd8d);
+}
+
+.calculator-grid {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid>button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.calculator-grid>button:hover {
+    background-color: rgba(255, 255, 255, 0.90);
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1/-1;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: end;
+    padding: 18px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.output .prev-output {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+}
+
+.output .current-output {
+    color: rgba(255, 255, 255);
+    font-size: 2.5rem;
 }
